@@ -1,8 +1,11 @@
+"use client"
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { useRouter } from 'next/navigation';
 
 const PitstopLandingPage = () => {
+  const router=useRouter()
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <img
@@ -20,7 +23,7 @@ const PitstopLandingPage = () => {
             <p className="mb-8 text-lg">
               Pitstop is a virtual garage manager that helps you keep track of your car collection.
             </p>
-            <Button variant={'link'}  className="w-1/2 text-white">
+            <Button onClick={()=>router.push("/auth/signin")} variant={'link'}  className="w-1/2 text-white">
               Get Started
             </Button>
           </CardContent>

@@ -42,10 +42,10 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 dark:bg-black">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
             Sign in to your account
           </h2>
         </div>
@@ -69,13 +69,21 @@ export default function SignIn() {
             <div className="text-red-500 text-sm text-center">{error}</div>
           )}
 
-          <div className="space-y-4">
+          <div className="space-y-4 dark:text-white">
             <Button
               type="submit"
               className="w-full"
             >
               {isLoading?"Processing":"Sign in"}
             </Button>
+            <Button
+                onClick={()=>router.push("signup")}
+              className="w-full "
+              variant={"link"}
+            >
+                Sign up here
+            </Button>
+            
 
             
           </div>
